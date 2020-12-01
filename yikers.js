@@ -11,7 +11,7 @@ client.on('message', msg => {
   if (msg.content === 'ping') {  //Simply check the bot is alive with a simple ping
     msg.reply('Pong!');
   }
-  if (msg.content.startsWith('s!')){ // The invoking command here is s!. To change it simple change whatever is within the single quotes (')
+  if (msg.content.startsWith('s!') || msg.content.startsWith('S!')){ // The invoking command here is s!. To change it simple change whatever is within the single quotes (')
     msg.delete({ timeout: 2500 }) //Takes 2500ms before deleting the invoking message
       .then(msg => console.log(`Deleted the invoking command`)) // Outputs the resulting notice to the console
       .catch(console.error);
